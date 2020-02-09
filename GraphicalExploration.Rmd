@@ -27,7 +27,7 @@ library(tidyverse)   # loads a group of useful packages including `ggplot2`
 ### Explore the `diamonds` data
 
 *Task: Use R to produce one informative graphic of the `diamonds` data.  The graphic should represent AT LEAST 3 variables.  Write a few sentences to describe what we can learn from the graphic your have provided.  (Note: do NOT write your narrative inside the code chunk.)*
-
+#The diamonds data has info on different carat dimonds. The data also shows how the dimaond was cut, the clarit, depth and pricing.
 
 ```{r}
 # read `diamonds` data into R; it has been provided by the `ggplot2` package
@@ -35,7 +35,9 @@ data("diamonds", package = "ggplot2")
 
 # add your code below for your one key data visualization
 
-
+ggplot2::diamonds
+ggplot(data = diamonds) + 
+  geom_point(mapping = aes(x = carat, y = cut))
 ```
 
 
