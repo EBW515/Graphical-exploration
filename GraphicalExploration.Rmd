@@ -1,7 +1,7 @@
 ---
 title: "Activity: Graphical Exploration"
-author: "YOUR NAME HERE"
-date: "Due Date: "
+author: "eric weah"
+date: "Due Date:2/9/2020 "
 output: html_notebook
 ---
 
@@ -27,7 +27,9 @@ library(tidyverse)   # loads a group of useful packages including `ggplot2`
 ### Explore the `diamonds` data
 
 *Task: Use R to produce one informative graphic of the `diamonds` data.  The graphic should represent AT LEAST 3 variables.  Write a few sentences to describe what we can learn from the graphic your have provided.  (Note: do NOT write your narrative inside the code chunk.)*
+
 #The diamonds data has info on different carat dimonds. The data also shows how the dimaond was cut, the clarit, depth and pricing.
+#The second ggplot shows the 3 varibales of cut, carat, and color. This can show that the bigger the carat the harder is it to get a better cut and diamond.
 
 ```{r}
 # read `diamonds` data into R; it has been provided by the `ggplot2` package
@@ -36,8 +38,8 @@ data("diamonds", package = "ggplot2")
 # add your code below for your one key data visualization
 
 ggplot2::diamonds
-ggplot(data = diamonds) + 
-  geom_point(mapping = aes(x = carat, y = cut))
+
+ggplot() + geom_point(data = diamonds, aes(x = cut, y = carat, color = color))
 ```
 
 
@@ -46,15 +48,21 @@ ggplot(data = diamonds) +
 
 *Task: Use R to produce one informative graphic of the `cereal.csv` data.  The graphic should represent AT LEAST 3 variables.  Write a few sentences to describe what we can learn from the graphic your have provided. (Note: do NOT write your narrative inside the code chunk.)*
 
+#The dataset contains the nutritional value of cerals
+#The graph produced shows a correlation between and rating. the lower the sugar the higher rating, the higher the sugar the lower the rating.
 
 ```{r}
 # read CSV data set into R
 CerealData <- read_csv(file = "cereal.csv")  
 
+
+
 # add your code below for your one key data visualization
-
-
+ggplot(CerealData, aes(sugars, rating)) +
+ geom_point() 
+  
 ```
+
 
 
 
